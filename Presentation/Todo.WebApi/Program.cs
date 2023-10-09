@@ -1,4 +1,10 @@
+using Todo.Application.Services;
+using Todo.Persistence.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 // Add services to the container.
 
