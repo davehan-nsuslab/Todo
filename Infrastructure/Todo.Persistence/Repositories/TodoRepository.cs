@@ -1,5 +1,6 @@
 namespace Todo.Persistence.Repositories;
 
+using Microsoft.EntityFrameworkCore;
 using Todo.Application.Repositories;
 using Todo.Domain.Entities;
 using Todo.Persistence.Contexts;
@@ -22,7 +23,13 @@ public class TodoRepository: ITodoRepository
 
     public Task DeleteAsync(Guid id) => throw new NotImplementedException();
 
-    public Task<Todo?> GetByIdAsync(Guid id) => throw new NotImplementedException();
+    public async Task<Todo?> GetByIdAsync(Guid id)
+    {
+        return await _context.Todos.FindAsync(id);
+    }
 
-    public Task<IEnumerable<Todo>> GetAllAsync() => throw new NotImplementedException();
+    public async Task<IEnumerable<Todo>> GetAllAsync()
+    {
+        return await _context.Todos.ToListAsync();
+    }
 }

@@ -9,5 +9,6 @@ public class Mappings: Profile
     public Mappings()
     {
         CreateMap<CreateTodoRequest, Todo>().ReverseMap();
+        CreateMap<Todo, TodoDto>().ReverseMap();
     }
 }

@@ -6,7 +6,6 @@ public class TodoDto
     public string Title { get; set; }
     public string Memo { get; set; }
     public bool Done { get; set; }
-    public DateTime CreatedAt { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime DueDate { get; set; }
 }

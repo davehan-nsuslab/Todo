@@ -1,5 +1,6 @@
 using Todo.Application.Services;
 using Todo.Persistence.Services;
+using Todo.WebApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.MapControllers();
 
