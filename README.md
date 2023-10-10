@@ -82,3 +82,8 @@ $ dotnet add ./Core/Todo.Application/Todo.Application.csproj package MediatR.Ext
 $ dotnet add ./Core/Todo.Application/Todo.Application.csproj package FluentValidation
 $ dotnet add ./Core/Todo.Application/Todo.Application.csproj package FluentValidation.DependencyInjectionExtensions
 ```
+## Db Migrations
+```bash
+$ dotnet ef migrations add InitialCreate -p ./Infrastructure/Todo.Persistence/Todo.Persistence.csproj -s ./Presentation/Todo.WebApi/Todo.WebApi.csproj
+$ dotnet ef database update -p ./Infrastructure/Todo.Persistence/Todo.Persistence.csproj -s ./Presentation/Todo.WebApi/Todo.WebApi.csproj
+```
